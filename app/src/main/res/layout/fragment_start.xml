@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".fragments.StartFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_50dp"
+            android:text="@string/text_hello"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_30sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300dp"
+            android:layout_marginBottom="@dimen/_50dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/start" />
+
+        <Button
+            android:textSize="@dimen/_30sp"
+            android:id="@+id/startBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_start_BTN" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="toolbarColor">#FF0000</color>
+    <color name="gradientStartColor">#FF3434</color>
+    <color name="gradientCenterColor">#FFE7E7</color>
+    <color name="gradientEndColor">#FF3434</color>
+    <color name="list_item_color_background">#78F84F4F</color>
+</resources>
