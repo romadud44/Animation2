@@ -8,18 +8,17 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/productsList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/_8dp"
         tools:listitem="@layout/list_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/goToBasket"
+        android:id="@+id/goToReceipt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:src="@drawable/ic_basket"
+        android:src="@drawable/ic_receipt"
         tools:ignore="RtlHardcoded"
         android:layout_margin="@dimen/_8dp"/>
 
