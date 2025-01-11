@@ -3,7 +3,6 @@ package com.example.animation2
 import android.app.AlertDialog
 import android.content.Context
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 
 class MyAlertDialog {

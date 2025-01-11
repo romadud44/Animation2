@@ -14,6 +14,7 @@ data class Product(val name: String, val price: Double, val image: Int) {
             Product("Хлеб", 40.3, R.drawable.bread),
             Product("Капуста", 25.5, R.drawable.cabbage),
         )
+        var basketProducts = mutableListOf<Product>()
     }
 
     override fun toString(): String {

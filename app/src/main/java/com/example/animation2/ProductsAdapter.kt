@@ -46,4 +46,8 @@ class ProductsAdapter(private val products: MutableList<Product>) :
     fun setOnProductClickListener(onProductClickListener: OnProductClickListener) {
         this.onProductClickListener = onProductClickListener
     }
+
+    fun getItem(position: Int) : Product{
+        return products[position]
+    }
 }

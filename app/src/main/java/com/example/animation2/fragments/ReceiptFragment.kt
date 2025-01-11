@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.animation2.Product
+import com.example.animation2.Product.Companion.basketProducts
 import com.example.animation2.Product.Companion.products
 import com.example.animation2.R
 import com.example.animation2.databinding.FragmentReceiptBinding
@@ -31,12 +32,15 @@ class ReceiptFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var sum = 0.0
+        for (i in basketProducts)
+            sum += i.price
         var receipt = "Список товаров:\n"
-        for (i in products.indices) {
-          receipt = receipt + products[i].toString() + "\n"
+        for (i in basketProducts.indices) {
+            receipt += basketProducts[i].toString() + "\n"
         }
 
-        binding?.textViewTV?.text = receipt
+        binding?.textViewTV?.text = "$receipt\nИтого: $sum денег"
     }
 
 }
