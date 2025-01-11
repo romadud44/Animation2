@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.animation2.MyAlertDialog
 import com.example.animation2.Product
 import com.example.animation2.ProductsAdapter
 import com.example.animation2.R
@@ -15,7 +16,7 @@ import com.example.animation2.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
     private var binding: FragmentListBinding? = null
-
+    var adapter =  ProductsAdapter(Product.products)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +37,14 @@ class ListFragment : Fragment() {
                 .replace(R.id.fragment, BasketFragment())
                 .commit()
         }
+        binding?.productsList?.setHasFixedSize(true)
         binding?.productsList?.layoutManager = LinearLayoutManager(requireContext())
-        binding?.productsList?.adapter = ProductsAdapter(Product.products)
+        binding?.productsList?.adapter = adapter
+        adapter.setOnProductClickListener(object :
+        ProductsAdapter.OnProductClickListener{
+            override fun onProductClick(product: Product, position: Int) {
+                MyAlertDialog.createDialog(requireContext(), adapter)
+            }
+        })
     }
 }

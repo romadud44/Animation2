@@ -19,8 +19,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/_50dp"
+        android:layout_marginEnd="@dimen/_16dp"
         android:src="@drawable/ic_basket"
-        tools:ignore="RtlHardcoded"
-        android:layout_margin="@dimen/_8dp"/>
+        tools:ignore="RtlHardcoded" />
 
 </FrameLayout>

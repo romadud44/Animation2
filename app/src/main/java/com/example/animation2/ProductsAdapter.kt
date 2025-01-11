@@ -9,6 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ProductsAdapter(private val products: MutableList<Product>) :
     RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>() {
+
+        private var onProductClickListener: OnProductClickListener? = null
+
+    interface OnProductClickListener{
+        fun onProductClick(product: Product, position: Int)
+    }
+
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTV: TextView = itemView.findViewById(R.id.listNameTV)
         val priceTV: TextView = itemView.findViewById(R.id.listPriceTV)
@@ -29,5 +36,14 @@ class ProductsAdapter(private val products: MutableList<Product>) :
         holder.nameTV.text = product.name
         holder.priceTV.text = product.price.toString()
         holder.imageIV.setImageResource(product.image)
+        holder.itemView.setOnClickListener{
+            if(onProductClickListener != null) {
+                onProductClickListener?.onProductClick(product, position)
+            }
+        }
+    }
+
+    fun setOnProductClickListener(onProductClickListener: OnProductClickListener) {
+        this.onProductClickListener = onProductClickListener
     }
 }
