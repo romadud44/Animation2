@@ -41,6 +41,8 @@ class ReceiptFragment : Fragment() {
         }
 
         binding?.textViewTV?.text = "$receipt\nИтого: $sum денег"
+
+
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.animation2
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        backgroundAnimation()
+
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -40,5 +43,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+    private fun backgroundAnimation(){
+        val animation: AnimationDrawable = binding.main.background as AnimationDrawable
+        animation.apply {
+            setEnterFadeDuration(1000)
+            setExitFadeDuration(3000)
+            start()
+        }
     }
 }

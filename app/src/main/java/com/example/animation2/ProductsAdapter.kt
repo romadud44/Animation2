@@ -50,4 +50,7 @@ class ProductsAdapter(private val products: MutableList<Product>) :
     fun getItem(position: Int) : Product{
         return products[position]
     }
+    fun remove(position: Int){
+        products.removeAt(position)
+    }
 }
