@@ -13,7 +13,6 @@ import com.example.animation2.Product
 import com.example.animation2.ProductsAdapter
 import com.example.animation2.R
 import com.example.animation2.databinding.FragmentBasketBinding
-import com.example.animation2.databinding.FragmentListBinding
 
 
 class BasketFragment : Fragment() {
@@ -47,10 +46,10 @@ class BasketFragment : Fragment() {
                 builder.setTitle("Действие?")
                     .setMessage("Удалить ${basketAdapter.getItem(position).name} из корзины?")
                     .setCancelable(true)
-                    .setNegativeButton("Нет") { dialog, which ->
+                    .setNegativeButton("Нет") { dialog, _ ->
                         dialog.cancel()
                     }
-                    .setPositiveButton("Да") { dialog, which ->
+                    .setPositiveButton("Да") { _, _ ->
                         basketAdapter.remove(position)
                         binding?.basketListRV?.adapter = basketAdapter
                         Toast.makeText(

@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         backgroundAnimation()
 
     }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
@@ -44,7 +45,8 @@ class MainActivity : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
-    private fun backgroundAnimation(){
+
+    private fun backgroundAnimation() {
         val animation: AnimationDrawable = binding.main.background as AnimationDrawable
         animation.apply {
             setEnterFadeDuration(1000)

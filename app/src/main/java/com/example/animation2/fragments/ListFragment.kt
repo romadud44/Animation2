@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.animation2.MyAlertDialog
 import com.example.animation2.Product
 import com.example.animation2.ProductsAdapter
 import com.example.animation2.R
@@ -48,14 +47,17 @@ class ListFragment : Fragment() {
             ProductsAdapter.OnProductClickListener {
             override fun onProductClick(product: Product, position: Int) {
 //                MyAlertDialog.createDialog(requireContext(), adapter)
+                /**
+                 * Не получилось реализовать AlertDialog отдельным классом, почему-то не хотел работать :(
+                 */
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Действие?")
                     .setMessage("Добавить ${adapter.getItem(position).name} в корзину?")
                     .setCancelable(true)
-                    .setNegativeButton("Нет") { dialog, which ->
+                    .setNegativeButton("Нет") { dialog, _ ->
                         dialog.cancel()
                     }
-                    .setPositiveButton("Да") { dialog, which ->
+                    .setPositiveButton("Да") { _, _ ->
                         val addProduct = adapter.getItem(position)
                         Product.basketProducts.add(addProduct)
                         Toast.makeText(

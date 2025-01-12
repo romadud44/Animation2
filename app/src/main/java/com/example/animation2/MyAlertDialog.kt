@@ -13,10 +13,10 @@ class MyAlertDialog {
                 builder.setTitle("Действие?")
                     .setMessage("Добавить в корзину?")
                     .setCancelable(true)
-                    .setNegativeButton("Нет") {dialog, which ->
+                    .setNegativeButton("Нет") {dialog, _ ->
                         dialog.cancel()
                     }
-                    .setPositiveButton("Да") {dialog, which ->
+                    .setPositiveButton("Да") {_, _ ->
                         val addProduct = adapter.getItemId(position)
 
                         Toast.makeText(context, "$addProduct", Toast.LENGTH_LONG).show()
