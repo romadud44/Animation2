@@ -50,7 +50,7 @@ class ListFragment : Fragment() {
 //                MyAlertDialog.createDialog(requireContext(), adapter)
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Действие?")
-                    .setMessage("Добавить в корзину?")
+                    .setMessage("Добавить ${adapter.getItem(position).name} в корзину?")
                     .setCancelable(true)
                     .setNegativeButton("Нет") { dialog, which ->
                         dialog.cancel()

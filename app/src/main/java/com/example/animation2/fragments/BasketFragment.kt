@@ -45,7 +45,7 @@ class BasketFragment : Fragment() {
 
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setTitle("Действие?")
-                    .setMessage("Удалить товар из корзины?")
+                    .setMessage("Удалить ${basketAdapter.getItem(position).name} из корзины?")
                     .setCancelable(true)
                     .setNegativeButton("Нет") { dialog, which ->
                         dialog.cancel()

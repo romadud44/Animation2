@@ -12,6 +12,7 @@
         >
 
         <TextView
+            android:id="@+id/textViewStartTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/_50dp"
@@ -21,6 +22,7 @@
             android:textSize="@dimen/_30sp" />
 
         <ImageView
+            android:id="@+id/imageViewStartIV"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_300dp"
             android:layout_marginBottom="@dimen/_50dp"
